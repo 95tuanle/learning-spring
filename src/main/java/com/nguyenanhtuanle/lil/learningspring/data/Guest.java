@@ -3,40 +3,33 @@ package com.nguyenanhtuanle.lil.learningspring.data;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "GUEST")
+@Table(name="GUEST")
 public class Guest {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "GUEST_ID")
-    private long id;
-
-    @Column(name = "FIRST_NAME")
+    @Column(name="GUEST_ID")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long guestId;
+    @Column(name="FIRST_NAME")
     private String firstName;
-
-    @Column(name = "LAST_NAME")
+    @Column(name="LAST_NAME")
     private String lastName;
-
-    @Column(name = "EMAIL_ADDRESS")
+    @Column(name="EMAIL_ADDRESS")
     private String emailAddress;
-
-    @Column(name = "ADDRESS")
+    @Column(name="ADDRESS")
     private String address;
-
-    @Column(name = "COUNTRY")
+    @Column(name="COUNTRY")
     private String country;
-
-    @Column(name = "STATE")
+    @Column(name="STATE")
     private String state;
-
-    @Column(name = "PHONE_NUMBER")
+    @Column(name="PHONE_NUMBER")
     private String phoneNumber;
 
-    public long getId() {
-        return id;
+    public long getGuestId() {
+        return guestId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setGuestId(long guestId) {
+        this.guestId = guestId;
     }
 
     public String getFirstName() {
@@ -98,7 +91,7 @@ public class Guest {
     @Override
     public String toString() {
         return "Guest{" +
-                "id=" + id +
+                "guestId=" + guestId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailAddress='" + emailAddress + '\'' +

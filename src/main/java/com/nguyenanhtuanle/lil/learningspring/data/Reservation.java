@@ -5,28 +5,25 @@ import jakarta.persistence.*;
 import java.sql.Date;
 
 @Entity
-@Table(name = "RESERVATION")
+@Table(name="RESERVATION")
 public class Reservation {
     @Id
+    @Column(name="RESERVATION_ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "RESERVATION_ID")
-    private long id;
-
-    @Column(name = "ROOM_ID")
+    private long reservationId;
+    @Column(name="ROOM_ID")
     private long roomId;
-
-    @Column(name = "GUEST_ID")
+    @Column(name="GUEST_ID")
     private long guestId;
-
-    @Column(name = "RES_DATE")
+    @Column(name="RES_DATE")
     private Date reservationDate;
 
-    public long getId() {
-        return id;
+    public long getReservationId() {
+        return reservationId;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public void setReservationId(long reservationId) {
+        this.reservationId = reservationId;
     }
 
     public long getRoomId() {
@@ -56,7 +53,7 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation{" +
-                "id=" + id +
+                "reservationId=" + reservationId +
                 ", roomId=" + roomId +
                 ", guestId=" + guestId +
                 ", reservationDate=" + reservationDate +
